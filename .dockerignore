@@ -1,0 +1,25 @@
+# Ignore the uploads dir in image (will mount it as volume)
+uploads
+
+# Ignore Git
+.git
+.gitignore
+
+# Ignore editor configs
+.vscode
+.idea
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Ignore OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore local builds or caches
+*.out
+*.exe
+*.log
+
+# Ignore test files (if you have any)
+*_test.go

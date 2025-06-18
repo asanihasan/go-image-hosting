@@ -1,0 +1,26 @@
+# Binaries
+server
+*.exe
+*.out
+
+# Build cache
+bin/
+*.log
+
+# Docker volumes or mounts
+uploads/
+*.db
+
+# IDE/editor junk
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# macOS/Windows files
+.DS_Store
+Thumbs.db
+
+# Go module cache (safe to exclude)
+vendor/

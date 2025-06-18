@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Manage – Image Host</title>
+  <style>
+    body{font-family:sans-serif;margin:2rem}
+    img{max-width:180px;max-height:180px;margin:0.5rem;border-radius:6px;box-shadow:0 0 4px #999}
+    .grid{display:flex;flex-wrap:wrap;gap:1rem}
+    .card{position:relative}
+    .del{position:absolute;top:4px;right:4px;background:#f33;color:#fff;border:none;border-radius:3px;padding:2px 6px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <h2>Your images</h2>
+
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required>
+    <button type="submit">Upload</button>
+    <a href="/logout" style="margin-left:2rem">Logout</a>
+  </form>
+
+  <hr>
+
+  <div class="grid">
+    {{range .}}
+      <div class="card">
+        <a href="/delete?img={{.}}" onclick="return confirm('Delete {{.}}?')">
+          <span class="del">✕</span>
+        </a>
+        <a href="/i/{{.}}" target="_blank">
+          <img src="/i/{{.}}" alt="">
+        </a>
+      </div>
+    {{else}}
+      <p>No images uploaded yet.</p>
+    {{end}}
+  </div>
+</body>
+</html>
