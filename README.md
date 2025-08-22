@@ -38,6 +38,7 @@ Login with password: `supersecret` (default hash set in `main.go`)
 ```bash
 docker build -t go-img .
 docker run -d \
+  --restart=always \
   -p 8765:8765 \
   -v "$PWD/uploads:/app/uploads" \
   go-img
