@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: go-app
+    restart: always
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./uploads:/app/uploads
